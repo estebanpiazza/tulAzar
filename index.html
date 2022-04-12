@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tul al azar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        input{margin:20px}
+        label{font-size: 20px;}
+        body{
+            background-color: black;
+        }
+        *{color:white}
+        input{
+            transform : scale(2);
+        }
+        h1{display:inline}
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+
+           <div class="col">
+               <h1> Cinturones</h1><br>
+            <input type="checkbox" id="blanco"><label for="blanco"> Blanco</label><br>
+            <input type="checkbox" id="blancopuntaamarilla"><label for="blancopuntaamarilla"> Blanco punta amarilla</label><br>
+            <input type="checkbox" id="amarillo"><label for="amarillo"> Amarillo</label><br>
+            <input type="checkbox" id="amarillopuntaverde"><label for="amarillopuntaverde"> Amarillo punta verde</label><br>
+            <input type="checkbox" id="verde"><label for="verde"> Verde</label><br>
+            <input type="checkbox" id="verdepuntaazul"><label for="verdepuntaazul"> Verde punta azul</label><br>
+            <input type="checkbox" id="azul"><label for="azul"> Azul</label><br>
+            <input type="checkbox" id="azulpuntaroja"><label for="azulpuntaroja"> Azul punta roja</label><br>
+            <input type="checkbox" id="rojo"><label for="rojo"> Rojo</label><br>
+            <input type="checkbox" id="rojopuntanegra"><label for="rojopuntanegra"> Rojo punta negra</label><br>
+            <input type="checkbox" id="1dan"><label for="1dan"> 1º Dan</label><br>
+            <input type="checkbox" id="2dan"><label for="2dan"> 2º Dan</label><br>
+        </div>
+            <div class="col" style="display: flex;
+            align-items: center;
+            justify-content: center;">
+            <button class="btn btn-primary" onclick="azar()">Tul al azar</button>
+                </div>
+            
+
+           
+       </div>
+       <div class="row">
+        <div class="col">
+            <h1>Tul: </h1>
+            <h1 id="tulAlAzar"> </h1>
+        </div>
+        </div>
+           
+       
+   </div>
+    
+</body>
+</html>
+<script>
+let arrayDeTules = []
+let tules=["Saju-Makgi / Saju-Jirugi",
+"Chon-Ji",
+"Dan-Gun",
+"Do-San",
+"Won-Hyo",
+"Yul-Gok",
+"Joong-Gun",
+"Hwa-rang ",
+"Choong-Moo",
+"Kwang-Gae",
+"Po-Eun",
+"Ge-Baek",
+"Eui-Am",
+"Choong-Jang",
+"Juche"]
+
+function azar(){
+    arrayDeTules = []
+    if(document.getElementById("blanco").checked){
+        arrayDeTules.push(tules[0])
+    }
+    if(document.getElementById("blancopuntaamarilla").checked){
+        arrayDeTules.push(tules[1])
+    }
+    if(document.getElementById("amarillo").checked){
+        arrayDeTules.push(tules[2])
+    }
+    if(document.getElementById("amarillopuntaverde").checked){
+        arrayDeTules.push(tules[3])
+    }
+    if(document.getElementById("verde").checked){
+        arrayDeTules.push(tules[4])
+    }
+    if(document.getElementById("verdepuntaazul").checked){
+        arrayDeTules.push(tules[5])
+    }
+    if(document.getElementById("azul").checked){
+        arrayDeTules.push(tules[6])
+    }
+    if(document.getElementById("azulpuntaroja").checked){
+        arrayDeTules.push(tules[7])
+    }
+    if(document.getElementById("rojo").checked){
+        arrayDeTules.push(tules[8])
+    }
+    if(document.getElementById("rojopuntanegra").checked){
+        arrayDeTules.push(tules[9])
+    }
+    if(document.getElementById("1dan").checked){
+        arrayDeTules.push(tules[10])
+        arrayDeTules.push(tules[11])
+        arrayDeTules.push(tules[12])
+    }
+    if(document.getElementById("2dan").checked){
+        arrayDeTules.push(tules[13])
+        arrayDeTules.push(tules[14])
+        arrayDeTules.push(tules[15])
+    }
+    
+
+    const aleatorio = arrayDeTules[Math.floor(Math.random() * arrayDeTules.length)];
+    if(aleatorio==undefined){
+        document.getElementById("tulAlAzar").innerText="Debe seleccionar cinturon"
+    }else{
+    document.getElementById("tulAlAzar").innerText=aleatorio}
+    
+    
+}
+</script>
